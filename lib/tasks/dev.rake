@@ -18,6 +18,7 @@ namespace :dev do
   desc "Adiciona o administrador padrão"
   task add_default_admin: :environment do
     Admin.create!(
+      name: 'Administrator',
       email: 'admin@compiladosadmin.com',
       password: DEFAULT_PASSWORD,
       password_confirmation: DEFAULT_PASSWORD
@@ -27,6 +28,7 @@ namespace :dev do
   desc "Adiciona o usuário padrão"
   task add_default_admin: :environment do
     User.create!(
+      name: 'User',
       email: 'user@compiladosuser.com',
       password: DEFAULT_PASSWORD,
       password_confirmation: DEFAULT_PASSWORD
