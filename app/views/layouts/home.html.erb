@@ -10,9 +10,9 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <body class="overflow-hidde">
+  <body class="flex flex-col min-h-screen overflow-hidde ">
     <%= render 'shared/nav' %>
-    <main class="flex justify-center min-h-full p-10">
+    <main class="flex my-14 justify-center p-8">
       <%= yield %>
     </main>
     <%= render 'shared/footer' %>
