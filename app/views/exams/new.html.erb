@@ -1,0 +1,29 @@
+<h1>New Exam</h1>
+
+<%= form_with(model: @exam, local: true) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :university %>
+    <%= form.text_field :university %>
+  </div>
+
+  <%= form.fields_for :questions do |question_form| %>
+    <div>
+      <%= question_form.label :question_text %>
+      <%= question_form.text_area :question_text %>
+    </div>
+
+    <div>
+      <%= question_form.label :answer %>
+      <%= question_form.text_area :answer %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit 'Create Exam' %>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+<!-- app/views/exams/index.html.erb -->
+<h1>Lista de Exames</h1>
+
+<ul>
+  <% @exams.each do |exam| %>
+    <li>
+      <%= link_to exam.name, exam_path(exam) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Novo Exame', new_exam_path %>

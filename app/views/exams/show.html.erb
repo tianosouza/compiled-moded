@@ -1,0 +1,16 @@
+<h1>Exam Details</h1>
+
+<p><strong>Name:</strong> <%= @exam.name %></p>
+<p><strong>University:</strong> <%= @exam.university %></p>
+
+<h2>Questions</h2>
+<ul>
+  <% @exam.questions.each do |question| %>
+    <li>
+      <strong>Question:</strong> <%= question.question_text %><br>
+      <strong>Answer:</strong> <%= question.answer %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Back', exams_path %>
