@@ -31,6 +31,8 @@ gem "tailwindcss-rails", "~> 2.1"
 
 gem "devise"
 
+gem "tty-spinner"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
