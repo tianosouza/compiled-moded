@@ -21,7 +21,7 @@
     <% end %>
     <% if admin_signed_in? %> <!-- Verifica se o usuário está logado -->
       <li class="hover:font-bold hover:scale-125 cursor-pointer">
-        <%= link_to 'admin', destroy_admin_session_path, data: { "turbo-method": :delete } %>
+        <%= link_to 'Logoff', destroy_admin_session_path, data: { "turbo-method": :delete } %>
       </li>
     <% else %>
       <li class="hover:font-bold hover:scale-125 cursor-pointer">
