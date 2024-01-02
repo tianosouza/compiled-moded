@@ -1,12 +1,15 @@
-<!-- app/views/exams/index.html.erb -->
-<h1>Lista de Exames</h1>
-
-<ul>
-  <% @exams.each do |exam| %>
-    <li>
-      <%= link_to exam.name, exam_path(exam) %>
-    </li>
-  <% end %>
-</ul>
-
-<%= link_to 'Novo Exame', new_exam_path %>
+  <div class="flex-col">
+    <h1 class="text-center font-bold text-4xl">Lista de Compilados</h1>
+    
+    
+      <ul>
+        <% @exams.each do |exam| %>
+          <div class="flex-col  text-white bg-pink-800 p-6 rounded-3xl shadow-md w-full m-4">          
+            <%= link_to exam.name, exam_path(exam) %>        
+          </div>
+        <% end %>
+      </ul>
+    
+    
+    <%= link_to 'New Exam', new_exam_path , class: "flex bg-pink-800 w-full text-white p-6 rounded-3xl border rounded-3x1 m-4 hover:bg-pink-950 hover:font-bold cursor-pointer" %>
+  </div>

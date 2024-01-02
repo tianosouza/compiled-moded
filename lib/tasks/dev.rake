@@ -10,6 +10,8 @@ namespace :dev do
       show_spinner("Migrando BD...") { %x(rails db:migrate) }
       show_spinner("Cadastrando Administrador padrão...") { %x(rails dev:add_default_admin) }
       show_spinner("Cadastrando Usuário padrão...") { %x(rails dev:add_default_user) }
+      show_spinner("Cadastrando Compilado padrão...") { %x(rails dev:add_default_exam) }
+      show_spinner("Cadastrando Pergutas padrão...") { %x(rails dev:add_default_question) }
     else
       puts 'Ambiente de desenvolvimento não configurado.'
     end
@@ -34,6 +36,25 @@ namespace :dev do
       password_confirmation: DEFAULT_PASSWORD
     )
   end
+
+  desc "Adiciona compilado padrão"
+  task add_default_exam: :environment do
+    Exam.create!(
+      name: 'Exam-test',
+      university: 'Univesrty-test'
+    )
+  end
+
+  desc "Adiciona pergutas padrão"
+  task add_default_question: :environment do
+    Question.create!(
+      question_text: 'onde vc mora',
+      answer: 'ali',
+      exam_id: 1
+    )
+  end
+
+
 
   private
 

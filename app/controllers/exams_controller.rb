@@ -1,4 +1,5 @@
 class ExamsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @exams = Exam.all
@@ -6,7 +7,7 @@ class ExamsController < ApplicationController
 
   def new
     @exam = Exam.new
-    10.times { @exam.questions.build }
+    10.times { @exam.questions.build } 
   end
 
   def create

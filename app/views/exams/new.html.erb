@@ -1,29 +1,35 @@
-<h1>New Exam</h1>
-
-<%= form_with(model: @exam, local: true) do |form| %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :university %>
-    <%= form.text_field :university %>
-  </div>
-
-  <%= form.fields_for :questions do |question_form| %>
+<div class="flex-col  text-white bg-pink-800 p-6 rounded-3xl shadow-md w-full">
+  <h1 class="text-center font-bold text-4xl">New Exam</h1>
+  
+  <%= form_with(model: @exam, local: true) do |form| %>
+    <fieldset class="border-2 p-2 pb-4 rounded-lg m-4">
+      <div class="flex flex-row gap-6">
+        <div class="basis-1/2">
+          <%= form.label :university %>
+          <%= form.text_field :university, class: "basis-1/2 w-full border rounded-2xl p-2 text-black" %>
+        </div>
+        <div class="basis-1/2">
+          <%= form.label :name %>
+          <%= form.text_field :name, class: "basis-1 w-full border rounded-2xl p-2 text-black"  %>
+        </div>
+      </div>
+    </fieldset>  
+    <%= form.fields_for :questions do |question_form| %>
+    <fieldset class="border-2 p-2 pb-4 rounded-lg m-4">
+      <div>
+        <%= question_form.label :question_text %>
+        <%= question_form.text_area :question_text, class: "w-full border rounded-2xl p-2 text-black" %>
+      </div>
+  
+      <div>
+        <%= question_form.label :answer %>
+        <%= question_form.text_area :answer, class: "w-full border rounded-2xl p-2 text-black" %>
+      </div>
+    </fieldset> 
+    <% end %>
+  
     <div>
-      <%= question_form.label :question_text %>
-      <%= question_form.text_area :question_text %>
-    </div>
-
-    <div>
-      <%= question_form.label :answer %>
-      <%= question_form.text_area :answer %>
+      <%= form.submit 'Create Exam', class: "flex  border rounded-lg p-4 m-4 hover:bg-pink-950 hover:font-bold cursor-pointer" %>
     </div>
   <% end %>
-
-  <div>
-    <%= form.submit 'Create Exam' %>
-  </div>
-<% end %>
+</div>

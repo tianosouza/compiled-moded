@@ -8,24 +8,9 @@
     </h1>
     <p>
       Contribua com seu compilado
-    </p>
-    <!-- <% if user_signed_in? %>
-      <p>Usuário ESTÁ logado</p>
-      <p><%= current_user.email %></p>
-    <% else %>
-      <p>Usuário Não ESTÁ logado</p>
-    <% end %>
+    </p>   
 
-    <% if admin_signed_in? %>
-      <p>Adminintrado ESTÁ logado</p>
-      <p><%= current_admin.email %></p>
-    <% else %>
-      <p>Adminintrado Não ESTÁ logado</p>
-    <% end %> -->
-
-    
-
-    <button class="bg-pink-800 p-3 font-bold text-white rounded-lg hover:scale-105">Contribua</button>
+    <button class="bg-pink-800 p-3 font-bold text-white rounded-lg hover:scale-105"><%= link_to 'Contribua', new_exam_path %></button>
   </div>
   <%= image_tag('img_home', class: 'w-auto h-auto') %>
   

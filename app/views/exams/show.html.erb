@@ -1,16 +1,21 @@
-<h1>Exam Details</h1>
-
-<p><strong>Name:</strong> <%= @exam.name %></p>
-<p><strong>University:</strong> <%= @exam.university %></p>
-
-<h2>Questions</h2>
-<ul>
-  <% @exam.questions.each do |question| %>
-    <li>
-      <strong>Question:</strong> <%= question.question_text %><br>
-      <strong>Answer:</strong> <%= question.answer %>
-    </li>
-  <% end %>
-</ul>
-
-<%= link_to 'Back', exams_path %>
+<div class="flex-col  text-white bg-pink-800 p-6 rounded-3xl shadow-md w-full">
+  <h1 class="text-center font-bold text-4xl">Compilado</h1>
+  <fieldset class="border-2 p-2 pb-4 rounded-lg m-4">
+    <p><strong>Name:</strong> <%= @exam.name %></p>
+    <p><strong>University:</strong> <%= @exam.university %></p>
+  </fieldset>
+  
+  <h2 class="text-center font-bold text-4xl">Questions</h2>
+  <ul>
+    <% @exam.questions.each do |question| %>
+    <fieldset class="border-2 p-2 pb-4 rounded-lg m-4">
+      <li>
+        <p class="p-2"><strong>Question:</strong> <%= question.question_text %></p><br>
+        <strong>Answer:</strong> <%= question.answer %>
+      </li>
+    </fieldset>
+    <% end %>
+  </ul>
+  
+  <%= link_to 'Back', exams_path %>
+</div>

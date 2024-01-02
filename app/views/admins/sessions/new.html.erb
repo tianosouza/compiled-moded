@@ -2,10 +2,13 @@
 <h2 class="text-center text-2xl font-bold">Login - Adm</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
   <div class="field p-1">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, class: "w-full border rounded-2xl p-2 text-black" %>
   </div>
+
+  
 
   <div class="field p-1">
     <%= f.label :password %><br />
